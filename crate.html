@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart</title>
+    <style>
+body {
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f8f9fa;
+  color: #343a40;
+}
+.users-menu{
+    margin-top: 19px;
+}
+/* Navbar */
+.nvbr {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: rgb(0, 68, 255);
+  height: 70px;
+  padding: 0 20px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+/* Logo */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo img {
+  height: 40px;
+}
+
+.txthd {
+  font-family: "Times New Roman", Times, serif;
+  font-size: 2em;
+  color: white;
+}
+
+/* Menu container */
+.menu-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 70%;
+}
+
+/* Navigation links */
+.cont-menu ul,
+.users-menu ul {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.cont-menu ul li a,
+.users-menu ul li a {
+  text-decoration: none;
+  font-size: 1.1em;
+  color: white;
+  transition: color 0.3s;
+}
+
+/* Image links inside users-menu */
+.users-menu ul li a img {
+  height: 30px;
+}
+
+/* Hover effect for links */
+.cont-menu ul li a:hover,
+.users-menu ul li a:hover {
+  color: rgb(0, 255, 140);
+}
+
+/* Animated underline */
+.cont-menu ul li a::after,
+.users-menu ul li a::after {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background-color: blue;
+  transition: all 0.3s ease;
+  transform: translateX(-50%);
+}
+
+.cont-menu ul li a:hover::after,
+.users-menu ul li a:hover::after {
+  width: 100%;
+}
+
+/* Menu toggle button (only on mobile) */
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 1.8em;
+  color: white;
+  cursor: pointer;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 1100;
+  }
+
+  .menu-container {
+    flex-direction: column;
+    background-color: blueviolet;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 250px;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+    padding-top: 80px;
+    z-index: 1000;
+  }
+
+  .menu-container.active {
+    transform: translateX(0);
+  }
+
+  .cont-menu,
+  .users-menu {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+
+  .cont-menu ul,
+  .users-menu ul {
+    flex-direction: column;
+    gap: 20px;
+  }
+}
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f9fa; /* Softer background color */
+    color: #343a40; /* Dark gray for text */
+}
+
+/* Header */
+header {
+    background-color: #007BFF;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Add depth */
+}
+
+h1 {
+    margin: 0;
+    font-size: 24px;
+    font-weight: bold;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2); /* Subtle text shadow */
+}
+
+/* Main Layout */
+main {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Cart Items */
+#cart-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+.cart-item {
+    background-color: white;
+    border-radius: 10px;
+    padding: 15px;
+    width: 250px;
+    text-align: center;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Smooth shadow */
+    transition: transform 0.3s, box-shadow 0.3s; /* Hover effects */
+}
+
+.cart-item:hover {
+    transform: translateY(-5px); /* Subtle lift */
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+}
+
+img {
+    width: 100%;
+    height: 150px;
+    object-fit: contain; /* Prevents cropping */
+    border-radius: 8px;
+    margin-bottom: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Image depth */
+}
+
+.cart-item h3 {
+    font-size: 18px;
+    margin: 10px 0;
+    color: #333;
+}
+
+.cart-item p {
+    font-size: 14px;
+    color: #777;
+    margin: 5px 0;
+}
+
+button {
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+button:hover {
+    background-color: #0056b3; /* Darker blue */
+    transform: scale(1.05); /* Slight zoom */
+}
+
+/* Cart Summary */
+#cart-summary {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    text-align: center;
+    margin-top: 20px;
+}
+
+#checkout-button {
+    background-color: #28a745; /* Green button */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+    margin-top: 10px;
+}
+
+#checkout-button:hover {
+    background-color: #218838; /* Darker green */
+    transform: scale(1.05);
+}
+
+    </style>
+</head>
+
+<body>
+    <div class="nvbr">
+        <div class="logo">
+          <div class="ig">
+            <img src="/books.png" alt="books logo">
+          </div>
+          <div class="txthd"><b>Bookie</b></div>
+        </div>
+        <button class="menu-toggle">≡</button>
+    <div class="menu-container">
+        <div class="cont-menu">
+          <ul>
+            <li><a href="http://localhost:3000">Home</a></li>
+            <li><a href="http://localhost:3000/about">About</a></li>
+            <li><a href="http://localhost:3000/shop">Shop</a></li>
+            <li><a href="http://localhost:3000/contact">Contact</a></li>
+            <li><a href="http://localhost:3000/order">Orders</a></li>
+          </ul>
+        </div>
+        <div class="users-menu">
+          <ul>
+            <li><a href="">New Login</a></li>
+            <li><a href="">Register</a></li>
+            <li><a href="http://localhost:3000/search"><img src="/serch.png" alt="" ></a></li>
+            <li><a href=""><img src="/login.png" alt=""></a></li>
+            <li><a href=""><img src="/crt.png" alt="" ></a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+</div>
+    <header>
+        <h1>Your Cart</h1>
+    </header>
+
+    <main>
+        <div id="cart-container">
+            <!-- Cart items will be dynamically populated -->
+        </div>
+        <div id="cart-summary">
+            <h2>Summary</h2>
+            <p>Total Items: <span id="total-items">0</span></p>
+            <p>Total Price: ₹<span id="total-price">0</span></p>
+            <button id="checkout-button">Checkout</button>
+        </div>
+    </main>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+          const menuToggle = document.querySelector(".menu-toggle");
+          const menuContainer = document.querySelector(".menu-container");
+      
+          menuToggle.addEventListener("click", function () {
+              menuContainer.classList.toggle("active");
+          });
+      });
+      
+      window.onload = async function () {
+          try {
+              const response = await fetch('/cartitems');
+              const data = await response.json();
+              const cartItems = data.cart;
+      
+              const cartContainer = document.getElementById('cart-container');
+              const totalItemsSpan = document.getElementById("total-items");
+              const totalPriceSpan = document.getElementById("total-price");
+      
+              cartContainer.innerHTML = "";
+      
+              let totalItems = 0;
+              let totalPrice = 0;
+      
+              cartItems.forEach(item => {
+                  totalItems += item.quantity;
+                  totalPrice += item.price * item.quantity;
+      
+                  const div = document.createElement('div');
+                  div.className = 'cart-item';
+                  div.innerHTML = `
+                      <img src="${item.image}" alt="${item.name}" width="100px">
+                      <h3>${item.name}</h3>
+                      <p>Price: ₹${item.price}</p>
+                      <p>Quantity: ${item.quantity}</p>
+                      <p>Total: ₹${item.price * item.quantity}</p>
+                      <button onclick="removeFromCart('${item.id}')">Remove</button>
+                      <button style="margin-left:20px" onclick="purchaseItem('${item.id}', '${item.name}', ${item.price})">Purchase</button>
+                  `;
+                  cartContainer.appendChild(div);
+                  cartContainer.appendChild(document.createElement('hr'));
+              });
+      
+              totalItemsSpan.textContent = totalItems;
+              totalPriceSpan.textContent = totalPrice;
+      
+          } catch (error) {
+              console.error(error);
+          }
+      };
+      
+      async function removeFromCart(id) {
+          try {
+              await fetch(`/cartitems/${id}`, {
+                  method: "DELETE"
+              });
+              alert("Removed from cart");
+              location.reload();
+          } catch (error) {
+              console.error(error);
+          }
+      }
+      
+      // 👇 New function to purchase a specific item
+      function purchaseItem(id, name, price) {
+          // Create the Purchase Form
+          const formHtml = `
+              <main class="container1">
+                  <section class="container2">
+                      <h2 class="head">Enter Details to Buy "${name}"</h2>
+                      <form id="contactForm" method="post">
+                          <input id="name" name="name" class="tab" type="text" placeholder="Enter your name" required>
+                          <input id="email" name="email" class="tab" type="email" placeholder="Enter your email" required>
+                          <input id="phone" name="phone" class="tab" type="tel" placeholder="Enter your phone number" required>
+                          <input type="text" name="type" class="tab" id="type" placeholder="Enter your payment method" required> 
+                          <textarea id="message" name="message" class="tab" placeholder="Give us Feedback"></textarea>
+                          <button class="tab1" type="submit">Buy</button>
+                      </form>
+                  </section>
+              </main>
+          `;
+      
+          // Replace cart container with form
+          document.getElementById('cart-container').innerHTML = formHtml;
+      
+          // Handle Form Submission
+          document.getElementById('contactForm').addEventListener('submit', async function (event) {
+              event.preventDefault();
+      
+              const buyerName = document.getElementById('name').value;
+              const buyerEmail = document.getElementById('email').value;
+              const buyerPhone = document.getElementById('phone').value;
+              const paymentType = document.getElementById('type').value;
+              const feedback = document.getElementById('message').value;
+      
+              // 1. Remove the book from cart
+              await fetch(`/cartitems/${id}`, {
+                  method: "DELETE"
+              });
+      
+              // 2. Add new order
+              const orderData = {
+                  name: name,
+                  price: price,
+                  buyerName: buyerName,
+                  buyerEmail: buyerEmail,
+                  buyerPhone: buyerPhone,
+                  paymentType: paymentType,
+                  feedback: feedback
+              };
+      
+              await fetch('/addorder', {
+                  method: "POST",
+                  headers: {
+                      "Content-Type": "application/json"
+                  },
+                  body: JSON.stringify(orderData)
+              });
+      
+              alert("Purchase Successful! 🎉");
+              window.location.href = "/orders"; // Redirect to orders page
+          });
+      }
+      </script>
+      
+</body>
+
+</html>

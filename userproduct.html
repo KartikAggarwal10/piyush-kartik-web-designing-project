@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop</title>
+  <style>
+    body {
+    font-family: 'Roboto', sans-serif; /* Modern and clean font */
+    margin: 0;
+    padding: 0;
+    background-color: #f8f9fa; /* Soft gray for background */
+    color: #333; /* Dark gray for text */
+}
+
+/* Header Styling */
+header {
+    background-color: #007BFF;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Add depth */
+}
+
+h1 {
+    margin: 0;
+    font-size: 24px;
+    font-weight: bold;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2); /* Subtle shadow for text */
+}
+
+/* Main Section */
+main {
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+/* Shop Container */
+#shop-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+/* Product Card Styling */
+.product-card {
+    border: none;
+    border-radius: 12px;
+    padding: 15px;
+    background-color: #fff;
+    width: 220px;
+    text-align: center;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Depth for a modern look */
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.product-card:hover {
+    transform: translateY(-5px); /* Subtle lift on hover */
+    box-shadow: 0 6px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* Image Styling */
+.product-card img {
+    width: 100%;
+    height: 150px; /* Consistent height */
+    object-fit: contain; /* Avoids cropping */
+    border-radius: 8px;
+    margin-bottom: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Product Text */
+.product-card h3 {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+    margin: 10px 0 5px 0;
+}
+
+.product-card p {
+    font-size: 14px;
+    color: #777;
+    margin: 5px 0;
+}
+
+/* Button Styling */
+button {
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    font-size: 14px;
+    font-weight: bold;
+    border-radius: 8px;
+    padding: 10px 15px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+button:hover {
+    background-color: #0056b3;
+    transform: scale(1.05); /* Slight zoom effect */
+}
+.nvbr{
+  display: flex;
+  background-color: rgb(0, 68, 255);
+  justify-content: space-between;
+  position: sticky;
+  top: 2%;
+  z-index: 3;
+}
+ .logo{
+  display: flex;
+  align-items: center;
+  width: 30%;
+}
+.txthd{
+  font-family:"Times New Roman", Times, serif;
+  font: 1em sans-serif;
+  font-size: 2em;
+}
+.cont-menu ul{
+  display: flex;
+  gap: 15px;
+  list-style: none;
+}
+.cont-menu ul li a{
+  text-decoration: none;
+  font-size: 1.1em;
+  color: white;
+}
+.users-menu ul{
+  display: flex;
+  gap: 15px;
+  list-style: none;
+}
+.menu-container{
+  display: flex;
+  justify-content: space-between;
+  width: 70%;
+}
+.users-menu ul li a{
+  text-decoration: none;
+  font-size: 1.1em;
+  color: white;
+
+}
+.users-menu ul li a img{
+  text-decoration: none;
+
+} .menu-toggle{
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+    position: absolute;
+    top: 3px;
+    right: 15px;
+    font-size: 1.5em;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    z-index: 1100;
+  }
+
+  /* Menu container */
+  .menu-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 250px;
+    height: 100%;
+    background-color:blueviolet;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+    gap: 20px;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease-in-out;
+    z-index: 1000;
+    padding-top: 50px;
+  }
+
+  /* Show when active */
+  .menu-container.active {
+    transform: translateX(0);
+  }
+
+  /* Separate nav and user sections */
+  .menu-container .cont-menu,
+  .menu-container .users-menu {
+    width: 100%;
+    text-align: center;
+  }
+
+  .menu-container ul {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    list-style: none;
+    padding: 0;
+  }
+
+  .menu-container ul li a {
+    text-decoration: none;
+    font-size: 1.1em;
+    color: white;
+  }
+
+  /* Hide desktop menus */
+  .cont, .users {
+    display: none;
+  }
+}
+/* Link style with underline animation */
+.menu-container ul li a {
+  position: relative;
+  text-decoration: none;
+  font-size: 1.1em;
+  color: white;
+  transition: color 0.3s ease;
+}
+
+.menu-container ul li a::after {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background-color: blue;
+  transition: all 0.3s ease;
+  transform: translateX(-50%);
+}
+
+/* Hover effect */
+.menu-container ul li a:hover {
+  color: rgb(0, 255, 140);
+}
+
+.menu-container ul li a:hover::after {
+  width: 100%;
+}
+
+/* Active link style */
+.menu-container ul li a.active {
+  color:white;
+}
+
+.menu-container ul li a.active::after {
+  width: 100%;
+}
+
+  </style>
+</head>
+<body>
+    <div class="nvbr">
+        <div class="logo">
+          <div class="ig">
+            <img src="/books.png" alt="books logo" height="50px">
+          </div>
+          <div class="txthd"><b>Bookie</b></div>
+        </div>
+        <button class="menu-toggle">≡</button>
+    <div class="menu-container">
+        <div class="cont-menu">
+          <ul>
+            <li><a href="http://localhost:3000">Home</a></li>
+            <li><a href="http://localhost:3000/about">About</a></li>
+            <li><a href="http://localhost:3000/shop">Shop</a></li>
+            <li><a href="http://localhost:3000/contact">Contact</a></li>
+            <li><a href="http://localhost:3000/order">Orders</a></li>
+          </ul>
+        </div>
+        <div class="users-menu">
+          <ul>
+            <li><a href="">New Login</a></li>
+            <li><a href="">Register</a></li>
+            <li><a href="http://localhost:3000/search"><img src="/serch.png" alt="" height="30px"></a></li>
+            <li><a href="/portfolio-krtk"><img src="/login.png" alt="" height="30px"></a></li>
+            <li><a href="/crte"><img src="/crt.png" alt="" height="30px"></a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <header>
+        <h1>Welcome to the Shop</h1>
+    </header>
+
+    <main>
+        <div id="shop-container">
+            <!-- Products will be displayed here -->
+        </div>
+    </main>
+
+    <script>
+      async function loadProducts() {
+        try {
+          const response = await fetch('/bdisp');
+          const data = await response.json();
+
+          const products = data.books;
+          const container = document.getElementById('shop-container'); // Updated to match the ID in HTML
+
+          products.forEach(product => {
+            container.innerHTML += `
+              <div class="product">
+                <img src="/people/${product.cover}" alt="${product.name}" width="150px" height="150px">
+                <h2>${product.name}</h2>
+                <p>₹${product.price}</p>
+                <button onclick="addToCart('${product._id}')">Add to Cart</button>
+              </div>
+            `;
+          });
+        } catch (err) {
+          console.error("Error loading products:", err);
+        }
+      }
+
+      async function addToCart(bookId) {
+        try {
+          const response = await fetch('/addtocart', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ bookId }),
+          });
+
+          const result = await response.json();
+          if (response.ok) {
+            alert('Added to cart successfully!');
+          } else {
+            alert(result.error || 'Failed to add to cart');
+          }
+        } catch (err) {
+          console.error('Error adding to cart:', err);
+        }
+      }
+
+      window.onload = loadProducts;
+    </script>
+</body>
+</html>
+</html>

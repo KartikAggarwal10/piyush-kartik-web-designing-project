@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .nvbr{
+  display: flex;
+  background-color: rgb(0, 68, 255);
+  justify-content: space-between;
+  position: sticky;
+  top: 2%;
+  z-index: 3;
+}
+ .logo{
+  display: flex;
+  align-items: center;
+  width: 30%;
+}
+.txthd{
+  font-family:"Times New Roman", Times, serif;
+  font: 1em sans-serif;
+  font-size: 2em;
+}
+.cont-menu ul{
+  display: flex;
+  gap: 15px;
+  list-style: none;
+}
+.cont-menu ul li a{
+  text-decoration: none;
+  font-size: 1.1em;
+  color: white;
+}
+.users-menu ul{
+  display: flex;
+  gap: 15px;
+  list-style: none;
+}
+.menu-container{
+  display: flex;
+  justify-content: space-between;
+  width: 70%;
+}
+.users-menu ul li a{
+  text-decoration: none;
+  font-size: 1.1em;
+  color: white;
+
+}
+.users-menu ul li a img{
+  text-decoration: none;
+
+} .menu-toggle{
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    font-size: 1.5em;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    z-index: 1100;
+  }
+
+  /* Menu container */
+  .menu-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 250px;
+    height: 100%;
+    background-color:blueviolet;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+    gap: 20px;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease-in-out;
+    z-index: 1000;
+    padding-top: 50px;
+  }
+
+  /* Show when active */
+  .menu-container.active {
+    transform: translateX(0);
+  }
+
+  /* Separate nav and user sections */
+  .menu-container .cont-menu,
+  .menu-container .users-menu {
+    width: 100%;
+    text-align: center;
+  }
+
+  .menu-container ul {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    list-style: none;
+    padding: 0;
+  }
+
+  .menu-container ul li a {
+    text-decoration: none;
+    font-size: 1.1em;
+    color: white;
+  }
+
+  /* Hide desktop menus */
+  .cont, .users {
+    display: none;
+  }
+}
+
+.second{
+  height: 450px;
+  width: 100%;
+  background-color: aqua;
+  background: url("/lib.png");
+  background-position: bottom;
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.h{
+  color: white;
+  font-size: 2em;
+}
+.gh{
+  text-align: center;
+}
+.h2{
+  color: white;
+}
+.ygy{
+  padding: 2%;
+  background-color: rgb(218, 170, 100);
+  border-radius: 40px;
+}
+.gyg{
+  padding-left: 5%;
+  padding-right: 5%;
+  padding-top: 5%;
+  padding-bottom: 5%;
+  background-color: rgb(255, 56, 56);
+  border: none;
+  border-radius: 5px;
+  width: 173px;
+  position: relative;
+  left: 50px;
+}
+.prc{
+  position: absolute;
+  top: 0%;
+  background-color: red;
+  padding-left: 5%;
+  padding-right: 5%;
+  padding-top: 2%;
+  padding-bottom: 2%;
+  font-size: 1.3em;
+}
+.mg{
+  position: relative;
+}
+.x{
+  display: flex;
+  justify-content: center;
+}
+.crd{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 273px;
+  gap: 8px;
+  margin-top: 25px;
+  margin-left: 45px;
+  border: 1px solid black;
+  text-align: center;
+  padding-top: 2%;
+  padding-bottom: 2%;
+  box-shadow: 5px 5px 10px 2px rgba(0, 0, 0, 0.3);
+  border-radius: 15px;
+}
+.disp{
+  display: grid;
+  gap: 50px;
+  margin-bottom: 30px;
+}
+.third{
+  display: flex;
+ clear:right;
+  gap: 30px;
+  background-color: rgb(0, 183, 255);
+  padding: 20px;
+}
+.pic{
+ width: 40%;
+ 
+}
+.tt{
+  text-align: center;
+  width: 60%;
+  color: white;
+  font-size: 1.5em;
+
+}
+.gyy{
+padding: 15px;
+width: 110px;
+  margin-top: 40px;
+  background-color: red;
+  border: none;
+  border-radius: 15px;
+  color: white;
+}
+.fourp{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin: 30px;
+
+}
+.four{
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}
+.nhn,.hnh{
+  text-align: center;
+}
+.hnh{
+  text-indent: 20px;
+}
+.oo ul{
+   list-style: none;
+   font-size: 20px;
+}
+.five{
+  /* display: flex;
+  flex-direction: column;
+  align-items: center; */
+  background-color: rgb(68, 0, 255);
+  padding: 20px;
+}
+.o{
+  display: flex;
+ justify-content: space-around;
+}
+.yuu{
+  font-size: 25px;
+}
+.ot ul{
+  list-style: none;
+  font-size: 20px;
+}
+.oth ul{
+  list-style: none;
+  font-size: 20px;
+}
+.t{
+  font-size: 20px;
+  text-align: center;
+  margin-top: 20px;
+
+}
+.rrffcc {
+  text-align: center; /* Aligns the text to the right */
+  /* Pushes it to the right in flex/grid */
+  padding-right: 20px; /* Optional: Adds some spacing from the edge */
+}
+.x {
+  display: flex;
+  flex-direction: column;
+}
+.rrffcc {
+  align-self: flex-end;
+  padding-right: 20px;
+  margin-bottom: 10px;
+  font: 1.3em sans-serif;
+}
+  </style>
+</head>
+<body>
+  <div class="nvbr">
+    <div class="logo">
+      <div class="ig">
+        <img src="/books.png" alt="books logo" height="50px">
+      </div>
+      <div class="txthd"><b>Bookie</b></div>
+    </div>
+    <button class="menu-toggle">≡</button>
+  
+    <!-- Mobile Menu Container -->
+    <div class="menu-container">
+      <div class="cont-menu">
+        <ul>
+          <li><a href="http://localhost:3000">Home</a></li>
+          <li><a href="http://localhost:3000/about">About</a></li>
+          <li><a href="http://localhost:3000/shop">Shop</a></li>
+          <li><a href="http://localhost:3000/contact">Contact</a></li>
+          <li><a href="http://localhost:3000/order">Orders</a></li>
+        </ul>
+      </div>
+      <div class="users-menu">
+        <ul>
+          <li><a href="">New Login</a></li>
+          <li><a href="">Register</a></li>
+          <li><a href="http://localhost:3000/search"><img src="/serch.png" alt="" height="30px"></a></li>
+          <li><a href="/portfolio-krtk"><img src="/login.png" alt="" height="30px"></a></li>
+          <li><a href="/crte"><img src="/crt.png" alt="" height="30px"></a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="second">
+    <div class="gh">
+     <div class="h"><h2><b>THE BOOKSHELF</b></h2></div>
+     <div class="h2"><h1><b>Explore,Discover,and Buy Your Favourite Books</b></h1></div>
+    
+        <button class="ygy">Discover More</button>
+       
+    </div>
+</div>
+<div class="x">
+ <div class="rrffcc"><a href="/userproduct">see more</a></div> 
+<div class="disp">
+  <div class="crd">
+    <div class="mg"><img src="/bookc1.png" height="270px">
+    <div class="prc">Rs. 600/-</div>
+    </div>
+   <div class="ttl">the sum of all things</div>
+   <button class="gyg">Add to Cart</button>
+  </div>
+  <div class="crd">
+    <div class="mg"><img src="/bookc1.png" height="270px">
+    <div class="prc">Rs. 600/-</div>
+    </div>
+   <div class="ttl">the sum of all things</div>
+   <button class="gyg">Add to Cart</button>
+  </div>
+  <div class="crd">
+    <div class="mg"><img src="/bookc1.png" height="270px">
+    <div class="prc">Rs. 600/-</div>
+    </div>
+   <div class="ttl">the sum of all things</div>
+   <button class="gyg">Add to Cart</button>
+  </div>
+</div>
+</div>
+<div class="third">
+  <div class="pic"><img src="/librry.png" width="100%"></div>
+  <div class="tt">
+    <div class="fg"><h1>Discover Our story</h1>
+    <div class="fg2">
+      At Booklee, we are passionate about connecting readers with captivating stories, inspiring ideas, and a world of knowledge. Our bookstore is more than just a place to buy books; it's a haven for book enthusiasts, where the love for literature thrives
+    </div>
+      <button class="gyy " >read more</button>
+  </div>
+  </div>
+
+</div>
+<div class="fourp">
+  <div class="four">
+    <div class="nhn"> <h1>Have Any Queries?</h1> </div>
+    <div class="hnh">    At Bookiee, we value your satisfaction and strive to provide exceptional customer service. If you have any questions, concerns, or inquiries, our dedicated team is here. to assist you every step of the way.</div>
+    <a href="/contact"> <button class="gyy">Contact us</button></a>
+  </div>
+</div>
+<div class="five">
+  <div class="o">
+    <div class="oo">
+      <ul>
+        <li class="yuu"><img src="/books.png" width="22px" alt=""><b>Bookie</b></li>
+        <li> <img src="/call.png" width="15px">  1234567890</li>
+        <li><img src="/mil.png" width="18px">  bookie@gmail.com</li>
+        <li><img src="/lctn.png"  width="18px" alt="">  Mumbai, India-902829</li>
+        <li><img src="/shop.png" width="18px" alt="">  Shop Timings:9am-9pm</li>
+      </ul>
+    </div>
+    <div class="ot">
+      <ul>
+        <li class="yuu"><b>Quick links</b></li>
+        <li> Home</li>
+        <li>About</li>
+        <li>Shop</li>
+        <li>Contact</li>
+      </ul>
+    </div>
+    <div class="oth">
+      <ul>
+        <li class="yuu"><b>Quick links</b></li>
+        <li> Home</li>
+        <li>About</li>
+        <li>Shop</li>
+        <li>Contact</li>
+      </ul>
+    </div>
+  </div>
+  <div class="t">Copyright&copy 2023 Tanisha Amin | All rights reserved</div>
+</div>
+
+  <script>
+   document.addEventListener("DOMContentLoaded", function () {
+    const menuToggle = document.querySelector(".menu-toggle");
+    const menuContainer = document.querySelector(".menu-container");
+
+    menuToggle.addEventListener("click", function () {
+        menuContainer.classList.toggle("active");
+    });
+});
+const grid = document.querySelector(".disp");
+const updateColumns = () => {
+  const columns =Math.max(1, Math.floor(window.innerWidth / 300));;
+  grid.style.gridTemplateColumns = `repeat(${columns}, 1fr)`;
+};
+
+window.addEventListener("resize", updateColumns);
+window.addEventListener("load", updateColumns);
+updateColumns();
+let count = 0;
+document.querySelectorAll(".gyy").forEach((button) => {
+  button.addEventListener("click", () => {
+    count++;
+    const isOdd = count % 2 !== 0;
+    const card = event.target.closest(".crd");
+    
+    // Extract book details
+    const bookTitle = card.querySelector(".ttl").innerText;
+    const bookPrice = card.querySelector(".prc").innerText;
+    const bookImage = card.querySelector("img").src;
+
+    // Send data to backend
+    fetch("/button-click", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ isOdd , bookTitle,bookPrice, bookImage })
+    })
+    .then(response => response.json())
+    .then(data => console.log("Response from server:", data))
+    .catch(error => console.error("Error:", error));
+  });
+});
+  </script>
+</body>
+</html>

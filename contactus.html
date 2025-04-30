@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Contact us for any inquiries or support for our Book Store">
+    <title>Contact Us | Book Store</title>
+  <style>
+    .nvbr{
+  display: flex;
+  background-color: rgb(0, 68, 255);
+  justify-content: space-between;
+  position: sticky;
+  top: 2%;
+  z-index: 3;
+}
+ .logo{
+  display: flex;
+  align-items: center;
+  width: 30%;
+}
+.txthd{
+  font-family:"Times New Roman", Times, serif;
+  font: 1em sans-serif;
+  font-size: 2em;
+}
+.cont-menu ul{
+  display: flex;
+  gap: 15px;
+  list-style: none;
+}
+.cont-menu ul li a{
+  text-decoration: none;
+  font-size: 1.1em;
+  color: white;
+}
+.users-menu ul{
+  display: flex;
+  gap: 15px;
+  list-style: none;
+}
+.menu-container{
+  display: flex;
+  justify-content: space-between;
+  width: 70%;
+}
+.users-menu ul li a{
+  text-decoration: none;
+  font-size: 1.1em;
+  color: white;
+
+}
+.users-menu ul li a img{
+  text-decoration: none;
+
+} .menu-toggle{
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    font-size: 1.5em;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    z-index: 1100;
+  }
+
+  /* Menu container */
+  .menu-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 250px;
+    height: 100%;
+    background-color:blueviolet;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+    gap: 20px;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease-in-out;
+    z-index: 1000;
+    padding-top: 50px;
+  }
+
+  /* Show when active */
+  .menu-container.active {
+    transform: translateX(0);
+  }
+
+  /* Separate nav and user sections */
+  .menu-container .cont-menu,
+  .menu-container .users-menu {
+    width: 100%;
+    text-align: center;
+  }
+
+  .menu-container ul {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    list-style: none;
+    padding: 0;
+  }
+
+  .menu-container ul li a {
+    text-decoration: none;
+    font-size: 1.1em;
+    color: white;
+  }
+
+  /* Hide desktop menus */
+  .cont, .users {
+    display: none;
+  }
+}
+/* Link style with underline animation */
+.menu-container ul li a {
+  position: relative;
+  text-decoration: none;
+  font-size: 1.1em;
+  color: white;
+  transition: color 0.3s ease;
+}
+
+.menu-container ul li a::after {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background-color: blue;
+  transition: all 0.3s ease;
+  transform: translateX(-50%);
+}
+
+/* Hover effect */
+.menu-container ul li a:hover {
+  color: rgb(0, 255, 140);
+}
+
+.menu-container ul li a:hover::after {
+  width: 100%;
+}
+
+/* Active link style */
+.menu-container ul li a.active {
+  color:white;
+}
+
+.menu-container ul li a.active::after {
+  width: 100%;
+}
+
+    body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f9fa; /* Soft gray background */
+    color: #333; /* Neutral text color */
+}
+
+/* Main Container */
+.container1 {
+    max-width: 600px; /* Restrict width for better readability */
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+    border-radius: 10px;
+}
+
+/* Sub Container */
+.container2 {
+    padding: 20px;
+    text-align: center;
+    background-color: #fdfdfd;
+    border-radius: 10px;
+}
+
+/* Heading Styling */
+.head {
+    font-size: 28px;
+    font-weight: bold;
+    color: #007BFF; /* Highlighted blue color */
+    margin-bottom: 20px;
+}
+
+/* Form Inputs */
+.tab {
+    width: 90%;
+    padding: 12px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: inset 0 2px 6px rgba(0, 0, 0, 0.1); /* Light inner shadow */
+    font-size: 16px;
+    background-color: #fff;
+    transition: border-color 0.3s ease;
+}
+
+.tab:focus {
+    border-color: #007BFF; /* Blue border on focus */
+    outline: none; /* Remove default outline */
+}
+
+/* Textarea Styling */
+textarea.tab {
+    min-height: 100px; /* More space for messages */
+    resize: vertical; /* Allow resizing only vertically */
+}
+
+/* Submit Button */
+.tab1 {
+    background-color: #007BFF;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    padding: 12px 15px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.tab1:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+    transform: scale(1.05); /* Slight zoom */
+}
+
+/* Responsive Styling */
+@media screen and (max-width: 768px) {
+    .container1 {
+        width: 90%;
+    }
+
+    .tab {
+        font-size: 14px;
+        padding: 10px;
+    }
+}
+  </style>
+</head>
+<body>
+    <div class="nvbr">
+        <div class="logo">
+          <div class="ig">
+            <img src="/books.png" alt="books logo" height="50px">
+          </div>
+          <div class="txthd"><b>Bookie</b></div>
+        </div>
+        <button class="menu-toggle">≡</button>
+    <div class="menu-container">
+        <div class="cont-menu">
+          <ul>
+            <li><a href="http://localhost:3000">Home</a></li>
+            <li><a href="http://localhost:3000/about">About</a></li>
+            <li><a href="http://localhost:3000/shop">Shop</a></li>
+            <li><a href="http://localhost:3000/contact">Contact</a></li>
+            <li><a href="http://localhost:3000/order">Orders</a></li>
+          </ul>
+        </div>
+        <div class="users-menu">
+          <ul>
+            <li><a href="">New Login</a></li>
+            <li><a href="">Register</a></li>
+            <li><a href="http://localhost:3000/search"><img src="/serch.png" alt="" height="30px"></a></li>
+            <li><a href=""><img src="/login.png" alt="" height="30px"></a></li>
+            <li><a href=""><img src="/crt.png" alt="" height="30px"></a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <main class="container1">
+        <section class="container2">
+            <h2 class="head">Contact Us!</h2>
+            <form id="contactForm" action="/send-suggestion" method="post">
+                <input id="name" name="name" class="tab" type="text" placeholder="Enter your name" required>
+                <input id="email" name="email" class="tab" type="email" placeholder="Enter your email" required>
+                <input id="phone" name="phone" class="tab" type="tel" placeholder="Enter your phone number" required>
+                <textarea id="message"name="message"  class="tab" name="message" placeholder="Enter your message" required></textarea>
+                <button class="tab1" type="submit">Send Message</button>
+            </form>
+        </section>
+    </main>
+    <script>
+             document.addEventListener("DOMContentLoaded", function () {
+    const menuToggle = document.querySelector(".menu-toggle");
+    const menuContainer = document.querySelector(".menu-container");
+
+    menuToggle.addEventListener("click", function () {
+        menuContainer.classList.toggle("active");
+    });
+});
+  document.addEventListener("DOMContentLoaded", function () {
+    const menuToggle = document.querySelector(".menu-toggle");
+    const menuContainer = document.querySelector(".menu-container");
+
+    menuToggle.addEventListener("click", function () {
+      menuContainer.classList.toggle("active");
+    });
+
+    // Highlight current page link
+    const currentUrl = window.location.href;
+    const links = document.querySelectorAll(".menu-container ul li a");
+
+    links.forEach(link => {
+      if (link.href === currentUrl) {
+        link.classList.add("active");
+      }
+    });
+  });
+  document.addEventListener("DOMContentLoaded", function () {
+    const menuToggle = document.querySelector(".menu-toggle");
+    const menuContainer = document.querySelector(".menu-container");
+
+    menuToggle.addEventListener("click", function () {
+        menuContainer.classList.toggle("active");
+    });
+})
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    const contactForm = document.getElementById('contactForm');
+
+    contactForm.addEventListener('submit', async function (event) {
+        event.preventDefault(); // Prevent the default form submission
+
+        const formData = {
+            name: document.getElementById('name').value,
+            email: document.getElementById('email').value,
+            phone: document.getElementById('phone').value,
+            message: document.getElementById('message').value,
+        };
+
+        try {
+            const response = await fetch('/send-suggestion', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(formData)
+            });
+
+            const result = await response.json();
+            if (response.ok) {
+                alert(result.message);
+                contactForm.reset(); // Clear the form
+            } else {
+                alert('Failed to send: ' + result.message);
+            }
+        } catch (error) {
+            console.error('Error sending suggestion:', error);
+            alert('Something went wrong.');
+        }
+    });
+});
+</script>
+
+
+    </script>
+</body>
+</html>

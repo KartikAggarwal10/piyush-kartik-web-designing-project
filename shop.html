@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+          .nvbr{
+  display: flex;
+  background-color: rgb(0, 68, 255);
+  justify-content: space-between;
+  position: sticky;
+  top: 2%;
+  z-index: 3;
+}
+ .logo{
+  display: flex;
+  align-items: center;
+  width: 30%;
+}
+.txthd{
+  font-family:"Times New Roman", Times, serif;
+  font: 1em sans-serif;
+  font-size: 2em;
+}
+.cont-menu ul{
+  display: flex;
+  gap: 15px;
+  list-style: none;
+}
+.cont-menu ul li a{
+  text-decoration: none;
+  font-size: 1.1em;
+  color: white;
+}
+.users-menu ul{
+  display: flex;
+  gap: 15px;
+  list-style: none;
+}
+.menu-container{
+  display: flex;
+  justify-content: space-between;
+  width: 70%;
+}
+.users-menu ul li a{
+  text-decoration: none;
+  font-size: 1.1em;
+  color: white;
+
+}
+.users-menu ul li a img{
+  text-decoration: none;
+
+} .menu-toggle{
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    font-size: 1.5em;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    z-index: 1100;
+  }
+
+  /* Menu container */
+  .menu-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 250px;
+    height: 100%;
+    background-color:blueviolet;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+    gap: 20px;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease-in-out;
+    z-index: 1000;
+    padding-top: 50px;
+  }
+
+  /* Show when active */
+  .menu-container.active {
+    transform: translateX(0);
+  }
+
+  /* Separate nav and user sections */
+  .menu-container .cont-menu,
+  .menu-container .users-menu {
+    width: 100%;
+    text-align: center;
+  }
+
+  .menu-container ul {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    list-style: none;
+    padding: 0;
+  }
+
+  .menu-container ul li a {
+    text-decoration: none;
+    font-size: 1.1em;
+    color: white;
+  }
+
+  /* Hide desktop menus */
+  .cont, .users {
+    display: none;
+  }
+}
+
+.second{
+  height: 450px;
+  width: 100%;
+  background-color: aqua;
+  background: url("/lib.png");
+  background-position: bottom;
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.h{
+  color: white;
+  font-size: 2em;
+}
+.gh{
+  text-align: center;
+}
+.h2{
+  color: white;
+}
+.ygy{
+  padding: 2%;
+  background-color: rgb(218, 170, 100);
+  border-radius: 40px;
+}
+.gyg{
+  padding-left: 5%;
+  padding-right: 5%;
+  padding-top: 5%;
+  padding-bottom: 5%;
+  background-color: rgb(255, 56, 56);
+  border: none;
+  border-radius: 5px;
+  width: 173px;
+  position: relative;
+  left: 50px;
+}
+.prc{
+  position: absolute;
+  top: 0%;
+  background-color: red;
+  padding-left: 5%;
+  padding-right: 5%;
+  padding-top: 2%;
+  padding-bottom: 2%;
+  font-size: 1.3em;
+}
+.mg{
+  position: relative;
+}
+.x{
+  display: flex;
+  justify-content: center;
+}
+.crd{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 273px;
+  gap: 8px;
+  margin-top: 25px;
+  margin-left: 45px;
+  border: 1px solid black;
+  text-align: center;
+  padding-top: 2%;
+  padding-bottom: 2%;
+  box-shadow: 5px 5px 10px 2px rgba(0, 0, 0, 0.3);
+  border-radius: 15px;
+}
+.disp{
+  display: grid;
+  gap: 50px;
+  margin-bottom: 30px;
+  height: 125%;
+}
+.third{
+  display: flex;
+ clear:right;
+  gap: 30px;
+  background-color: rgb(0, 183, 255);
+  padding: 20px;
+}
+.pic{
+ width: 40%;
+ 
+}
+.tt{
+  text-align: center;
+  width: 60%;
+  color: white;
+  font-size: 1.5em;
+
+}
+.gyy{
+padding: 15px;
+width: 110px;
+  margin-top: 40px;
+  background-color: red;
+  border: none;
+  border-radius: 15px;
+  color: white;
+}
+.fourp{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin: 30px;
+
+}
+.four{
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}
+.nhn,.hnh{
+  text-align: center;
+}
+.hnh{
+  text-indent: 20px;
+}
+.oo ul{
+   list-style: none;
+   font-size: 20px;
+}
+.five{
+  /* display: flex;
+  flex-direction: column;
+  align-items: center; */
+  background-color: rgb(68, 0, 255);
+  padding: 20px;
+}
+.o{
+  display: flex;
+ justify-content: space-around;
+}
+.yuu{
+  font-size: 25px;
+}
+.ot ul{
+  list-style: none;
+  font-size: 20px;
+}
+.oth ul{
+  list-style: none;
+  font-size: 20px;
+}
+.t{
+  font-size: 20px;
+  text-align: center;
+  margin-top: 20px;
+
+}
+.box{
+  display: grid;
+}
+    </style>
+</head>
+<body>
+    <div class="nvbr">
+    <div class="logo">
+      <div class="ig">
+        <img src="/books.png" alt="books logo" height="50px">
+      </div>
+      <div class="txthd"><b>Bookie</b></div>
+    </div>
+    <button class="menu-toggle">≡</button>
+  
+    <!-- Mobile Menu Container -->
+    <div class="menu-container">
+      <div class="cont-menu">
+        <ul>
+          <li><a href="http://localhost:3000">Home</a></li>
+          <li><a href="http://localhost:3000/about">About</a></li>
+          <li><a href="http://localhost:3000/shop">Shop</a></li>
+          <li><a href="http://localhost:3000/contact">Contact</a></li>
+          <li><a href="http://localhost:3000/order">Orders</a></li>
+        </ul>
+      </div>
+      <div class="users-menu">
+        <ul>
+          <li><a href="">New Login</a></li>
+          <li><a href="">Register</a></li>
+          <li><a href="http://localhost:3000/search"><img src="/serch.png" alt="" height="30px"></a></li>
+          <li><a href="/portfolio-krtk"><img src="/login.png" alt="" height="30px"></a></li>
+          <li><a href="/crte"><img src="/crt.png" alt="" height="30px"></a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="disp">
+
+  </div>
+  <div class="five">
+    <div class="o">
+      <div class="oo">
+        <ul>
+          <li class="yuu"><img src="src="/books.png" width="22px" alt=""><b>Bookie</b></li>
+          <li> <img src="src="/call.png" width="15px">  1234567890</li>
+          <li><img src="src="/mil.png" width="18px">  bookie@gmail.com</li>
+          <li><img src="src="/lctn.png"  width="18px" alt="">  Mumbai, India-902829</li>
+          <li><img src="src="/shop.png" width="18px" alt="">  Shop Timings:9am-9pm</li>
+        </ul>
+      </div>
+      <div class="ot">
+        <ul>
+          <li class="yuu"><b>Quick links</b></li>
+          <li> Home</li>
+          <li>About</li>
+          <li>Shop</li>
+          <li>Contact</li>
+        </ul>
+      </div>
+      <div class="oth">
+        <ul>
+          <li class="yuu"><b>Quick links</b></li>
+          <li> Home</li>
+          <li>About</li>
+          <li>Shop</li>
+          <li>Contact</li>
+        </ul>
+      </div>
+    </div>
+    <div class="t">Copyright&copy 2023 Tanisha Amin | All rights reserved</div>
+  </div>
+  <script>
+    async function get() {
+        let x = await fetch("http://localhost:3000/bdisp");
+        let y = await x.json();
+        console.log(y.books[0]);
+        console.log(y.books.length);
+        for(var i=0;i<y.books.length;i++){
+                    let k = `  <div class="crd">
+    <div class="mg"><img src=${"./people/"+y.books[i].cover} height="170px" width="200px">
+    <div class="prc">${y.books[i].price}</div>
+    </div>
+   <div class="ttl">${y.books[i].name}</div>
+   <button class="gyg">Add to Cart</button>
+  </div>`
+  let div = document.createElement("div");
+  div.innerHTML=k;
+  div.className="pp";
+  document.getElementsByClassName("disp")[0].appendChild(div)
+        }
+
+    }
+    get();
+    document.addEventListener("DOMContentLoaded", function () {
+     const menuToggle = document.querySelector(".menu-toggle");
+     const menuContainer = document.querySelector(".menu-container");
+ 
+     menuToggle.addEventListener("click", function () {
+         menuContainer.classList.toggle("active");
+     });
+ });
+ document.addEventListener("DOMContentLoaded", function () {
+    const menuToggle = document.querySelector(".menu-toggle");
+    const menuContainer = document.querySelector(".menu-container");
+
+    menuToggle.addEventListener("click", function () {
+        menuContainer.classList.toggle("active");
+    });
+});
+const grid = document.querySelector(".disp");
+const updateColumns = () => {
+  const columns =Math.max(1, Math.floor(window.innerWidth / 300));;
+  grid.style.gridTemplateColumns = `repeat(${columns}, 1fr)`;
+};
+
+window.addEventListener("resize", updateColumns);
+window.addEventListener("load", updateColumns);
+updateColumns();
+ </script>
+</body>
+</html>
+

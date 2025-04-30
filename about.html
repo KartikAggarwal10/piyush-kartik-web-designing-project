@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+      .nvbr{
+    display: flex;
+    background-color: rgb(0, 68, 255);
+    justify-content: space-between;
+    position: sticky;
+    top: 2%;
+    z-index: 3;
+  }
+   .logo{
+    display: flex;
+    align-items: center;
+    width: 30%;
+  }
+  .txthd{
+    font-family:"Times New Roman", Times, serif;
+    font: 1em sans-serif;
+    font-size: 2em;
+  }
+  .cont-menu ul{
+    display: flex;
+    gap: 15px;
+    list-style: none;
+  }
+  .cont-menu ul li a{
+    text-decoration: none;
+    font-size: 1.1em;
+    color: white;
+  }
+  .users-menu ul{
+    display: flex;
+    gap: 15px;
+    list-style: none;
+  }
+  .menu-container{
+    display: flex;
+    justify-content: space-between;
+    width: 70%;
+  }
+  .users-menu ul li a{
+    text-decoration: none;
+    font-size: 1.1em;
+    color: white;
+  
+  }
+  .users-menu ul li a img{
+    text-decoration: none;
+  
+  } .menu-toggle{
+    display: none;
+  }
+  
+  @media (max-width: 768px) {
+    .menu-toggle {
+      display: block;
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      font-size: 1.5em;
+      background: none;
+      border: none;
+      color: white;
+      cursor: pointer;
+      z-index: 1100;
+    }
+  
+    /* Menu container */
+    .menu-container {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 250px;
+      height: 100%;
+      background-color:blueviolet;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: start;
+      gap: 20px;
+      transform: translateX(-100%);
+      transition: transform 0.3s ease-in-out;
+      z-index: 1000;
+      padding-top: 50px;
+    }
+  
+    /* Show when active */
+    .menu-container.active {
+      transform: translateX(0);
+    }
+  
+    /* Separate nav and user sections */
+    .menu-container .cont-menu,
+    .menu-container .users-menu {
+      width: 100%;
+      text-align: center;
+    }
+  
+    .menu-container ul {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      list-style: none;
+      padding: 0;
+    }
+  
+    .menu-container ul li a {
+      text-decoration: none;
+      font-size: 1.1em;
+      color: white;
+    }
+  
+    /* Hide desktop menus */
+    .cont, .users {
+      display: none;
+    }
+  }
+  .fourp{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin: 30px;
+  
+  }
+  .four{
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+  }
+  .nhn,.hnh{
+    text-align: center;
+  }
+  .hnh{
+    text-indent: 20px;
+  }
+  .oo ul{
+     list-style: none;
+     font-size: 20px;
+  }
+  .five{
+    /* display: flex;
+    flex-direction: column;
+    align-items: center; */
+    background-color: rgb(68, 0, 255);
+    padding: 20px;
+  }
+  .o{
+    display: flex;
+   justify-content: space-around;
+  }
+  .yuu{
+    font-size: 25px;
+  }
+  .ot ul{
+    list-style: none;
+    font-size: 20px;
+  }
+  .oth ul{
+    list-style: none;
+    font-size: 20px;
+  }
+  .t{
+    font-size: 20px;
+    text-align: center;
+    margin-top: 20px;
+  
+  }.pic{
+    width: 40%;
+    
+   }
+   .tt{
+     text-align: center;
+     width: 60%;
+     color: white;
+     font-size: 1.5em;
+   
+   }
+   .gyy{
+   padding: 15px;
+   width: 110px;
+     margin-top: 40px;
+     background-color: red;
+     border: none;
+     border-radius: 15px;
+     color: white;
+   }
+   .two{
+    display: flex;
+    gap: 40px;
+    padding: 40px;
+    margin-left: 70px;
+   }  
+   .tv{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+   }
+    </style>
+</head>
+<body>
+    <div class="nvbr">
+        <div class="logo">
+          <div class="ig">
+            <img src="/books.png" alt="books logo" height="50px">
+          </div>
+          <div class="txthd"><b>Bookie</b></div>
+        </div>
+        <button class="menu-toggle">≡</button>
+      
+        <!-- Mobile Menu Container -->
+        <div class="menu-container">
+          <div class="cont-menu">
+            <ul>
+              <li><a href="http://localhost:3000">Home</a></li>
+              <li><a href="http://localhost:3000/about">About</a></li>
+              <li><a href="http://localhost:3000/shop">Shop</a></li>
+              <li><a href="http://localhost:3000/contact">Contact</a></li>
+              <li><a href="http://localhost:3000/order">Orders</a></li>
+            </ul>
+          </div>
+          <div class="users-menu">
+            <ul>
+              <li><a href="">New Login</a></li>
+              <li><a href="">Register</a></li>
+              <li><a href="http://localhost:3000/search"><img src="/serch.png" alt="" height="30px"></a></li>
+              <li><a href=""><img src="/login.png" alt="" height="30px"></a></li>
+              <li><a href=""><img src="/crt.png" alt="" height="30px"></a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="tv">
+      <div class="two">
+        <div class="to"><img src="/out.png" alt="" height="400px"></div>
+        <div class="tt">
+          <div class="too" style="color: black;"> <h1><b> Why Choose Us?</b></h1></div>
+          <div class="tot" style="color: black;">With our extensive collection of books spanning various genres, you'll find the perfect read to satisfy your cravings. Our knowledgeable staff of passionate book enthusiasts is always ready to offer personalized recommendations and guide you toward hidden gems. We take pride in fostering an inclusive community, hosting engaging events, book clubs, and author meet-ups. Additionally, our seamless online presence allows you to browse, explore, and order books from the comfort of your home, ensuring secure transactions and timely deliveries. At Bookiee, customer satisfaction is paramount. We are dedicated to delivering exceptional service, promptly addressing any queries or concerns. Join us in celebrating the power of books to inspire, educate. and entertain. Let us be your trusted companion on your literary adventures.</div>
+        </div>
+      </div>
+    </div>
+      <div class="fourp">
+        <div class="four">
+          <div class="nhn"> <h1>Have Any Queries?</h1> </div>
+          <div class="hnh">    At Bookiee, we value your satisfaction and strive to provide exceptional customer service. If you have any questions, concerns, or inquiries, our dedicated team is here. to assist you every step of the way.</div>
+          <a href="/contact"><button class="gyy">Contact us</button></a> 
+        </div>
+      </div>
+      <div class="five">
+        <div class="o">
+          <div class="oo">
+            <ul>
+              <li class="yuu"><img src="src="/books.png" width="22px" alt=""><b>Bookie</b></li>
+              <li> <img src="src="/call.png" width="15px">  1234567890</li>
+              <li><img src="src="/mil.png" width="18px">  bookie@gmail.com</li>
+              <li><img src="src="/lctn.png"  width="18px" alt="">  Mumbai, India-902829</li>
+              <li><img src="src="/shop.png" width="18px" alt="">  Shop Timings:9am-9pm</li>
+            </ul>
+          </div>
+          <div class="ot">
+            <ul>
+              <li class="yuu"><b>Quick links</b></li>
+              <li> Home</li>
+              <li>About</li>
+              <li>Shop</li>
+              <li>Contact</li>
+            </ul>
+          </div>
+          <div class="oth">
+            <ul>
+              <li class="yuu"><b>Quick links</b></li>
+              <li> Home</li>
+              <li>About</li>
+              <li>Shop</li>
+              <li>Contact</li>
+            </ul>
+          </div>
+        </div>
+        <div class="t">Copyright&copy 2023 Tanisha Amin | All rights reserved</div>
+      </div>
+<script>
+   document.addEventListener("DOMContentLoaded", function () {
+    const menuToggle = document.querySelector(".menu-toggle");
+    const menuContainer = document.querySelector(".menu-container");
+
+    menuToggle.addEventListener("click", function () {
+        menuContainer.classList.toggle("active");
+    });
+});
+</script>
+</body>
+</html>

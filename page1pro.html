@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product</title>
+   <style>
+        * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 30px;
+    background: #fff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.logo span {
+    color: #c0392b;
+}
+
+.nav-links {
+    display: flex;
+    gap: 15px;
+}
+
+.nav-btn {
+    padding: 8px 16px;
+    background: #fff;
+    border: none;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    border-radius: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.nav-btn:hover {
+    background-color: #f0f0f0;
+}
+
+.profile-icon img {
+    width: 30px;
+    height: 30px;
+}
+    body {
+    font-family: 'Roboto', sans-serif; /* Modern font */
+    background-color: #f8f9fa; /* Light gray background */
+    margin: 0;
+    padding: 0;
+    color: #343a40; /* Dark gray text for readability */
+}
+
+/* Centering the Add Product Form */
+.container1 {
+    width: 400px;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    margin: 30px auto;
+    padding: 20px;
+    text-align: center;
+}
+
+.container1 h2 {
+    color: #007BFF; /* Blue text for focus */
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+/* Input Fields */
+#productName, #productPrice, #file, .button1 {
+    margin-top: 15px;
+    width: 90%;
+    height: 40px;
+    padding: 8px 12px;
+    font-size: 16px;
+    border: 1px solid #ced4da; /* Light gray border */
+    border-radius: 8px;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+#productName:focus, #productPrice:focus, #file:focus {
+    border-color: #007BFF;
+    box-shadow: 0 0 8px rgba(0, 123, 255, 0.25); /* Blue glow */
+}
+
+/* Add Product Button */
+.button1 {
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 8px;
+    padding: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.button1:hover {
+    background-color: #0056b3; /* Darker blue */
+    transform: scale(1.05);
+}
+
+/* Product Card Wrapper */
+.container_wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    padding: 20px;
+}
+
+/* Product Card */
+.container2 {
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    width: 270px;
+    padding: 15px;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.container2:hover {
+    transform: translateY(-5px); /* Lift effect */
+    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.2);
+}
+
+.container2 img {
+    width: 100%;
+    height: 160px;
+    object-fit: contain; /* No distortion */
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+.book1name {
+    font-size: 18px;
+    font-weight: bold;
+    color: #343a40;
+    margin: 10px 0 5px 0;
+}
+
+.price {
+    font-size: 14px;
+    color: #6c757d; /* Muted gray */
+}
+
+/* Action Buttons */
+.design {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    padding: 10px 0;
+}
+
+.button2 {
+    background-color: #FF5733; /* Vibrant orange */
+    color: #ffffff;
+    border: none;
+    font-size: 14px;
+    font-weight: bold;
+    padding: 8px 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.button2:hover {
+    background-color: #C70039; /* Darker red */
+    transform: translateY(-3px);
+}
+
+/* Popup Styling */
+.popupcontainer {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 400px;
+    background-color: #ffffff;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    border-radius: 12px;
+    z-index: 1000;
+}
+
+#pop1, #status, #file2 {
+    width: 90%;
+    padding: 8px 12px;
+    font-size: 16px;
+    border: 1px solid #ced4da;
+    border-radius: 8px;
+    outline: none;
+    margin: 10px 0;
+    transition: border-color 0.3s;
+}
+
+#pop1:focus, #status:focus, #file2:focus {
+    border-color: #007BFF;
+    box-shadow: 0 0 8px rgba(0, 123, 255, 0.25);
+}
+
+.button3 {
+    background-color: #28a745; /* Green */
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.button3:hover {
+    background-color: #218838; /* Darker green */
+    transform: scale(1.05);
+}
+
+   </style>
+</head>
+
+<body>
+    
+    <nav class="navbar">
+        <div class="logo">Admin <span>Dashboard</span></div>
+        <div class="nav-links">
+            <a href="/orderbckend"><button class="nav-btn" >Home</button></a>  
+            <a href="/pge1pro"><button class="nav-btn" >Products</button></a>    
+            <a href="/login"><button class="nav-btn" >New Login</button></a>
+        </div>
+        <div class="profile-icon">
+            <a href="/portfolio-krtk">
+            <img src="https://img.icons8.com/ios-filled/50/000000/user.png" alt="Profile" /></a>
+        </div>
+    </nav>
+
+    <div class="container1">
+        <div class="title">
+            <h2>Add Product</h2>
+        </div>
+
+        <form method="post" enctype="multipart/form-data">
+            <div class="tab" >
+                <input type="text" id="name" name="name" placeholder="Enter Product Name" required>
+            </div>
+
+            <div class="tab">
+                <input type="text" id="price" name="price" placeholder="Enter Product Price" required>
+            </div>
+
+            <div class="tab">
+                <input type="file" id="cover" name="cover" required>
+            </div>
+
+            <div class="tab">
+                <button class="button1" type="submit">Add Product</button>
+            </div>
+        </form>
+    </div>
+
+    <div class="container_wrapper">
+        <div class="container2">
+            <img src="/people/81ZPcK6HpuL.jpg" alt="book1">
+            <div class="book1name">Let us C</div>
+            <div class="book1name">Trial</div>
+            <div class="design">
+                <button class="button2">Update</button>
+                <button class="button2">Delete</button>
+            </div>
+        </div>
+
+        <div class="container2">
+            <img src="/people/81EGXCaqmwL.jpg" alt="book2">
+            <div class="book1name">Learn Java</div>
+            <div class="book1name">Trial</div>
+            <div class="design">
+                <button class="button2">Update</button>
+                <button class="button2">Delete</button>
+            </div>
+        </div>
+
+        <div class="container2">
+            <img src="/people/51TQZ1zD-ZL.jpg" alt="book3">
+            <div class="book1name">HTML and CSS</div>
+            <div class="book1name">Trial</div>
+            <div class="design">
+                <button class="button2">Update</button>
+                <button class="button2">Delete</button>
+            </div>
+        </div>
+    </div>
+    <div class="popupcontainer">
+        <div class="containerp1">
+            <div class="img2">
+                <img src="" alt="">
+            </div>
+            <div >
+                <input type="text" id="pop1" value="Let Us C">
+            </div>
+            <div>
+                <select name="choice" id="status">
+                    <option value="available">Available</option>
+                    <option value="notabailable">Not Available</option>
+                    <option value="borrowed">Borrowed</option>
+                </select>
+            </div>
+            <div>
+                <input type="file" id="file2" name="file2" required>
+            </div>
+            <div>
+                <button class="button3">Confirm</button>
+            </div>
+        </div>
+    </div>
+    <div class="popupcontainer">
+        <div class="containerp1">
+            <div class="img2">
+                <img src="" alt="">
+            </div>
+            <div >
+                <input type="text" id="pop1" value="Learn Java">
+            </div>
+            <div>
+                <select name="choice" id="status">
+                    <option value="available">Available</option>
+                    <option value="notabailable">Not Available</option>
+                    <option value="borrowed">Borrowed</option>
+                </select>
+            </div>
+            <div>
+                <input type="file" id="file2" name="file2" required>
+            </div>
+            <div>
+                <button class="button3">Confirm</button>
+            </div>
+        </div>
+    </div>
+    <div class="popupcontainer">
+        <div class="containerp1">
+            <div class="img2">
+                <img src="" alt="">
+            </div>
+            <div >
+                <input type="text" id="pop1" value="HTML and CSS">
+            </div>
+            <div>
+                <select name="choice" id="status">
+                    <option value="available">Available</option>
+                    <option value="notabailable">Not Available</option>
+                    <option value="borrowed">Borrowed</option>
+                </select>
+            </div>
+            <div>
+                <input type="file" id="file2" name="file2" required>
+            </div>
+            <div>
+                <button class="button3">Confirm</button>
+            </div>
+        </div>
+    </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const containerWrapper = document.querySelector(".container_wrapper"); 
+        
+            // Fetch products from API and render
+            const fetchProducts = async () => {
+                try {
+                    containerWrapper.innerHTML = "<h3>Loading...</h3>";
+        
+                    const response = await fetch("/bdisp");
+                    const data = await response.json();
+                    const products = data.books || [];
+        
+                    renderProducts(products);
+                } catch (error) {
+                    console.error("Error fetching products:", error);
+                    showFeedback("Failed to load products.", "#dc3545");
+                }
+            };
+        
+            // Render products
+            const renderProducts = (products) => {
+                containerWrapper.innerHTML = ""; 
+        
+                products.forEach(product => {
+                    const productCard = document.createElement("div");
+                    productCard.classList.add("container2");
+        
+                    productCard.innerHTML = `
+                        <img src="/people/${product.cover}" alt="${product.name}">
+                        <div class="book1name">${product.name}</div>
+                        <div class="book1name">₹${product.price}</div>
+                        <div class="design">
+                            <button class="button2" onclick="updateProduct('${product._id}')">Update</button>
+                            <button class="button2" onclick="deleteProduct('${product._id}')">Delete</button>
+                        </div>
+                    `;
+        
+                    containerWrapper.appendChild(productCard);
+                });
+            };
+        
+            // Delete product
+            window.deleteProduct = async (id) => {
+                const confirmDelete = confirm("Are you sure you want to delete this product?");
+                if (!confirmDelete) return;
+        
+                try {
+                    const response = await fetch(`/deleteproduct/${id}`, { method: "DELETE" });
+                    const result = await response.json();
+        
+                    if (response.ok) {
+                        showFeedback("Product deleted successfully!");
+                        fetchProducts(); // Refresh products
+                    } else {
+                        showFeedback(result.message || "Delete failed", "#dc3545");
+                    }
+                } catch (error) {
+                    console.error("Error deleting product:", error);
+                    showFeedback("Delete failed", "#dc3545");
+                }
+            };
+        
+            // Update product
+            window.updateProduct = async (id) => {
+                const newPrice = prompt("Enter new price:");
+                if (!newPrice) return;
+        
+                try {
+                    const response = await fetch(`/updateproduct/${id}`, {
+                        method: "PUT",
+                        headers: { "Content-Type": "application/json" },
+                        body: JSON.stringify({ price: newPrice })
+                    });
+                    const result = await response.json();
+        
+                    if (response.ok) {
+                        showFeedback("Product updated successfully!");
+                        fetchProducts(); // Refresh products
+                    } else {
+                        showFeedback(result.message || "Update failed", "#dc3545");
+                    }
+                } catch (error) {
+                    console.error("Error updating product:", error);
+                    showFeedback("Update failed", "#dc3545");
+                }
+            };
+        
+            // Feedback message
+            const showFeedback = (message, color = "#28a745") => {
+                const feedback = document.createElement("div");
+                feedback.textContent = message;
+                feedback.style.position = "fixed";
+                feedback.style.bottom = "20px";
+                feedback.style.right = "20px";
+                feedback.style.backgroundColor = color;
+                feedback.style.color = "#fff";
+                feedback.style.padding = "10px 20px";
+                feedback.style.borderRadius = "8px";
+                feedback.style.boxShadow = "0 2px 10px rgba(0,0,0,0.1)";
+                feedback.style.zIndex = 9999;
+                document.body.appendChild(feedback);
+                setTimeout(() => feedback.remove(), 3000);
+            };
+        
+            // Initial load
+            fetchProducts();
+        });
+        </script>
+              
+</body>
+
+</html>
